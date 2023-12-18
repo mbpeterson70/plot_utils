@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def square_equal_aspect(ax):
+def square_equal_aspect(ax=None):
     """
     Sets a plot's aspect ratio equal and makes the plot square while still being centered at the
     original plot's center.
@@ -9,6 +9,9 @@ def square_equal_aspect(ax):
     Args:
         ax (matplotlib axis): matplotlib axis
     """
+    if ax is None:
+        ax = plt.gca()
+    
     # set equal aspect ratio
     ax.set_aspect('equal')
 
